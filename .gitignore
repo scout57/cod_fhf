@@ -1,6 +1,7 @@
 /catboost_info
 /data_example
 /db
+/db2
 /__pycache__
 /.ipynb_checkpoints
 /main.ipynb

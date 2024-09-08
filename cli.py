@@ -66,7 +66,7 @@ class DiskPredictCLI(cmd.Cmd):
                 raise FileNotFoundError(f"Файл '{path}' не найден.")
             
             print(f"Началось дополнение базы данных из файла '{path}'")
-            apply(file)             
+            apply(path)             
             print("Готово! Файл трансформирован и расчитан!")
 
         except FileNotFoundError as e:
