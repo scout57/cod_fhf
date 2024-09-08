@@ -10,6 +10,15 @@
 - **apply**: Добавление нового csv в существующую БД.
 - **predict**: Прогнозирование состояния жёсткого диска на основе модели и серийного номера.
 
+## Запуск окружения
+```bash
+cd project_folder
+python -m venv venv
+(windows) venv\Scripts\activate
+(linux) source venv/bin/activate
+pip install -r requirements.txt
+```
+
 ## Как создать с нуля
 
 1. Подготовить исходный датасет в папку рядом со скриптами (например, ``data_example``)
