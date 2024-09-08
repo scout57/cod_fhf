@@ -27,9 +27,8 @@ class DiskPredictCLI(cmd.Cmd):
     def do_help(self, arg):
         print("""
   Команды:
-  transform /data_example         Сформировать БД
-  calculate                       Расчитать БД
-  apply /data_example             Добавить данные
+  transform /data_example         Сформировать и расчитать БД
+  apply /new.csv                  Добавить данные
   predict MODEL SERIAL_NUMBER     Спрогнозировать кол-во дней до отказа по модели и серийному номеру
   exit                            Выход из программы
     """)
@@ -39,22 +38,9 @@ class DiskPredictCLI(cmd.Cmd):
         try:
             
             transform(folder)
-        
-            print("Готово! База данных сформирована!")
-        except FileNotFoundError as e:
-            print(f"Ошибка: {e}")
-        except Exception as e:
-            print(f"Непредвиденная ошибка: {e}")
-
-    
-    # Конвертировать датасет к удобному формату (сформировать свою БД)
-    def do_calculate(self, args):
-        try:
-            
             calc()
-            
-        
-            print("Готово! База данных расчитана!")
+            print("Готово! База данных сформирована и расчитана!")
+   
         except FileNotFoundError as e:
             print(f"Ошибка: {e}")
         except Exception as e:

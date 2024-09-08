@@ -1,0 +1,10 @@
+/catboost_info
+/data_example
+/db
+/__pycache__
+/.ipynb_checkpoints
+/main.ipynb
+/main_2.ipynb
+/readme2.md
+/search.py
+/.DS_Store
