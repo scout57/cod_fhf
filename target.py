@@ -1,8 +1,10 @@
 import pandas as pd
 import glob
+import os
 
 TARGET_COL='days_to_fail'
 DB_FOLDER='./db'
+DB_2_FOLDER='./db2'
 
 def recalc_target(file, force = False):
     df = pd.read_csv(file)
@@ -25,8 +27,12 @@ def recalc_target(file, force = False):
             delta = (failure['date'] - row['date']).days
             df.loc[iid, TARGET_COL] = delta
 
+
     
-    df.to_csv(file, index=False)
+    if not os.path.exists(DB_2_FOLDER):
+        os.makedirs(DB_2_FOLDER)
+    
+    df.to_csv(DB_2_FOLDER + '/' + os.path.basename(file), index=False)
 
 
 def calc():
@@ -35,7 +41,7 @@ def calc():
     if not csv_files:
         raise FileNotFoundError("Не найдено файлов .csv в указанном каталоге.")
     
-    print(f"Началось расчитывание базы данных в {mask}")
+    print(f"Началось расcчитывание базы данных в {mask}")
 
     # Формирование БД
     i = 0
@@ -43,4 +49,4 @@ def calc():
     for file in csv_files:
         recalc_target(file)
         i = i + 1
-        print(f"Расчитано моделей дисков: {i} из {total}")
+        print(f"Расcчитано моделей дисков: {i} из {total}")

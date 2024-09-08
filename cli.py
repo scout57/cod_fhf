@@ -46,6 +46,19 @@ class DiskPredictCLI(cmd.Cmd):
         except Exception as e:
             print(f"Непредвиденная ошибка: {e}")
 
+
+    # Конвертировать датасет к удобному формату (сформировать свою БД)
+    def do_calculate(self, folder):
+        try:
+            
+            calc()
+            print("Готово! База данных расчитана!")
+   
+        except FileNotFoundError as e:
+            print(f"Ошибка: {e}")
+        except Exception as e:
+            print(f"Непредвиденная ошибка: {e}")
+
     # Добавить CSV в базу данных
     def do_apply(self, path):
         try:

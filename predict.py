@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 import os
 
-from transform import DB_FOLDER
+from target import DB_2_FOLDER
 from target import TARGET_COL
 
 
@@ -15,7 +15,7 @@ from target import TARGET_COL
 def predict(model, serial):
 
     # Загрузка и подготовка данных
-    file_path = f'{DB_FOLDER}/{model}.csv'
+    file_path = f'{DB_2_FOLDER}/{model}.csv'
     print(f"Loading file from path: {file_path}")
     
     if not os.path.exists(file_path):
