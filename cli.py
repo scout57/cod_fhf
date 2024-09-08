@@ -27,10 +27,10 @@ class DiskPredictCLI(cmd.Cmd):
     def do_help(self, arg):
         print("""
   Команды:
-  transform /data_example         Сформировать и расчитать БД
-  apply /new.csv                  Добавить данные
-  predict MODEL SERIAL_NUMBER     Спрогнозировать кол-во дней до отказа по модели и серийному номеру
-  exit                            Выход из программы
+  transform ./data_example         Сформировать и расчитать БД
+  apply ./new.csv                  Добавить данные
+  predict MODEL SERIAL_NUMBER      Спрогнозировать кол-во дней до отказа по модели и серийному номеру
+  exit                             Выход из программы
     """)
 
     # Конвертировать датасет к удобному формату (сформировать свою БД)
